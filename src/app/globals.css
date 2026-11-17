@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #F9F8F3;
+    --foreground: #171B2C;
+    --font-plus-jakarta: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+    --font-roboto: "Roboto", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F9F8F3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #DBDFEB;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9E9FAA;
+  }
+}
+
+@layer components {
+  /* ==========================================================================
+     TYPOGRAPHY REUSABLE CLASSES (Fluid scaling with clamp for all viewports)
+     ========================================================================== */
+  .heading-hero {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #171B2C;
+    font-size: clamp(2rem, 4.5vw + 1rem, 4rem);
+    line-height: 1.1;
+  }
+
+  .heading-section {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #171B2C;
+    font-size: clamp(1.75rem, 3vw + 0.8rem, 3rem);
+    line-height: 1.15;
+  }
+
+  .heading-cta {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #171B2C;
+    font-size: clamp(1.85rem, 3.8vw + 0.9rem, 3.5rem);
+    line-height: 1.15;
+  }
+
+  .heading-card {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #171B2C;
+    font-size: clamp(1.125rem, 1vw + 0.85rem, 1.25rem);
+    line-height: 1.3;
+  }
+
+  .eyebrow {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #3157F6;
+    @apply text-xs;
+  }
+
+  .eyebrow-dark {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #171B2C;
+    @apply text-xs;
+  }
+
+  .body-large {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 400;
+    color: #656770;
+    @apply text-base sm:text-lg leading-relaxed;
+  }
+
+  .body-base {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 400;
+    color: #656770;
+    @apply text-sm sm:text-base leading-relaxed;
+  }
+
+  .body-small {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 400;
+    color: #656770;
+    @apply text-sm leading-normal;
+  }
+
+  .caption-text {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 400;
+    color: #9E9FAA;
+    @apply text-xs leading-normal;
+  }
+
+  /* ==========================================================================
+     BUTTONS REUSABLE CLASSES
+     ========================================================================== */
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-md font-bold transition-all duration-200 select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px];
+  }
+
+  .btn-primary {
+    @apply btn-base bg-brand-blue text-white px-7 py-3.5 text-sm hover:bg-brand-blue-hover focus-visible:ring-brand-blue shadow-sm active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-white text-brand-dark border border-brand-border px-7 py-3.5 text-sm hover:border-brand-blue focus-visible:ring-brand-blue shadow-sm active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply btn-base text-brand-muted hover:text-brand-dark px-4 py-2.5 text-sm hover:bg-black/5 active:scale-[0.98];
+  }
+
+  .btn-white {
+    @apply btn-base bg-white text-brand-dark px-7 py-3.5 text-sm hover:bg-brand-canvas focus-visible:ring-white shadow-sm active:scale-[0.98];
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-base;
+  }
+
+  /* ==========================================================================
+     BADGES & PILLS
+     ========================================================================== */
+  .badge-base {
+    @apply inline-flex items-center gap-1.5 font-semibold text-xs leading-none;
+  }
+
+  .badge-blue {
+    @apply badge-base px-3 py-1.5 rounded-full bg-brand-blue-soft text-brand-blue;
+  }
+
+  .badge-yellow {
+    @apply badge-base px-3 py-1.5 rounded-md bg-brand-yellow-accent text-brand-dark;
+  }
+
+  .badge-peach {
+    @apply badge-base px-3 py-1.5 rounded-full bg-brand-peach/40 text-brand-dark;
+  }
+
+  .badge-coral {
+    @apply badge-base px-2.5 py-1 rounded-full bg-brand-coral/15 text-brand-coral font-medium;
+  }
+
+  /* ==========================================================================
+     FORM INPUTS & LABELS
+     ========================================================================== */
+  .input-base {
+    @apply w-full rounded-md border border-brand-border bg-brand-canvas px-4 py-3 text-sm text-brand-dark placeholder:text-brand-light-gray focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-150 min-h-[44px];
+  }
+
+  .label-base {
+    @apply block text-sm font-bold text-brand-dark mb-1.5;
+  }
+
+  /* ==========================================================================
+     LAYOUT PRIMITIVES
+     ========================================================================== */
+  .site-container {
+    max-width: 1200px;
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .site-section {
+    @apply py-16 sm:py-20 lg:py-24 relative;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-hidden {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    .reveal-shown {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 500ms ease-out, transform 500ms ease-out;
+    }
+  }
+
+  @media print {
+    .reveal-hidden,
+    .reveal-shown {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Card base */
+  .card-base {
+    @apply bg-white rounded-2xl border border-brand-border/60 transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card-base hover:shadow-floating hover:-translate-y-0.5 hover:border-brand-blue/30;
+  }
+}
