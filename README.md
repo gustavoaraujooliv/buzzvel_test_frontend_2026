@@ -4,6 +4,10 @@ Buzzvel frontend developer tech challenge.
 
 A Next.js 15 app (App Router) built with React 19, TypeScript, and Tailwind CSS.
 
+## Production URL
+
+- [lumaLearning](https://buzzveltestfrontend2026.vercel.app/)
+
 ## Requirements
 
 | Tool | Version |

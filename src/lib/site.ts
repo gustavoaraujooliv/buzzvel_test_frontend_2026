@@ -1,4 +1,4 @@
-export const siteUrl = "https://luma-learning.com";
+export const siteUrl = "https://buzzveltestfrontend2026.vercel.app";
 
 export const siteName = "Luma Learning";
 
