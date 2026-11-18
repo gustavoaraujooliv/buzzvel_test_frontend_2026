@@ -63,3 +63,7 @@ npm start
 - I built this project in Cursor with Grok 4.7 (medium). I stand by that choice because it matches how I work now. Directing an agent well, and reviewing what it produces, removes a large share of the mechanical work. On this project it cut the time spent on scaffolding and the first implementation by half or more.
 - Cursor set up the project, read the Figma file, and produced the Tailwind tokens and a base layout. The file was not open in Dev Mode, so some measurements and styles were unreliable. Once that base existed, I reviewed the page element by element and adjusted it to match the design as closely as possible.
 - AI use on this project could have gone further. Rules that include the design tokens would let an agent add new sections and components without drifting from the system. I could also add skills that create tests and components, and a skill that runs a full visual review in Cursor’s built-in browser.
+
+## Personal decisions
+
+- In “What will you learn next?”, I kept the background symbols and icons on smaller screens, including phones. They are part of that section’s design, they scale with it, and they stay out of the way of the heading and the buttons.
